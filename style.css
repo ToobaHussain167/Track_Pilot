@@ -1,0 +1,104 @@
+/* Page Layout */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #6b21a8;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #000000;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: #c084fc;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Headings & Dividers */
+h2, h3 {
+    color: #6b21a8;
+}
+
+hr {
+    border: 1px solid #6b21a8;
+    margin: 30px 0;
+}
+
+/* Form Styling */
+form {
+    background-color: #f3e8ff;
+    border: 1px solid #6b21a8;
+    padding: 15px;
+}
+
+input, select {
+    padding: 6px;
+    margin-top: 4px;
+}
+
+button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+}
+
+td {
+    padding: 8px;
+    border: 1px solid #dddddd;
+}
+
+/* Reusable Status Badge Class */
+.status-badge {
+    background-color: #f3e8ff;
+    color: #6b21a8;
+    padding: 3px 8px;
+    font-weight: bold;
+}
+
+/* List & Footer Styling */
+ol {
+    line-height: 1.8;
+}
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
