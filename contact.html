@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackPilot - Support & Contact</title>
+</head>
+<body>
+
+    <header>
+        <h1>TrackPilot Support</h1>
+        <nav>
+            <a href="index.html">Dashboard</a> | 
+            <a href="about.html">About & Workflow</a> | 
+            <a href="contact.html">Support & Contact</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main>
+        <section id="contact-form-section">
+            <h2>System Support & Feedback</h2>
+            <p>Have an issue with TrackPilot or need a custom onboarding workflow added? Reach out below.</p>
+
+            <form action="#" method="POST">
+                <div>
+                    <label for="user-name">Your Full Name:</label><br>
+                    <input type="text" id="user-name" name="userName" placeholder="e.g. Alex Mercer" required>
+                </div>
+                <br>
+                <div>
+                    <label for="user-email">Email Address:</label><br>
+                    <input type="email" id="user-email" name="userEmail" placeholder="alex@company.com" required>
+                </div>
+                <br>
+                <div>
+                    <label for="issue-category">Issue Category:</label><br>
+                    <select id="issue-category" name="issueCategory">
+                        <option value="bug">Report a Bug</option>
+                        <option value="feature">Feature Request</option>
+                        <option value="general">General Feedback</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <label for="message">Message Details:</label><br>
+                    <textarea id="message" name="message" rows="5" placeholder="Describe your question or issue here..." required></textarea>
+                </div>
+                <br>
+                <button type="submit">Submit Support Request</button>
+            </form>
+        </section>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>TrackPilot Project &copy; 2026 | Built with HTML5</p>
+    </footer>
+
+</body>
+</html>

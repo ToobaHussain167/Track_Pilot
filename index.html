@@ -1,143 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TrackPilot - Internal Onboarding Tracker</title>
-    <!-- Linked External Stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackPilot - Dashboard</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. HEADER & MAIN TITLE -->
+    <!-- 1. HEADER & NAVIGATION -->
     <header>
         <h1>TrackPilot</h1>
-        <p><i>Internal Client Onboarding & Progress Management Tool</i></p>
+        <p><em>Internal Client Onboarding & Progress Management Tool</em></p>
+        <nav>
+            <a href="index.html">Dashboard</a> | 
+            <a href="about.html">About & Workflow</a> | 
+            <a href="contact.html">Support & Contact</a>
+        </nav>
     </header>
 
-    <!-- 2. NAVIGATION BAR -->
-    <nav>
-        <a href="#add-client">Add Client</a> | 
-        <a href="#dashboard">Dashboard Table</a> | 
-        <a href="#checklist">Onboarding Checklist</a> | 
-        <a href="https://github.com" target="_blank">GitHub Repo</a>
-    </nav>
+    <hr>
 
-    <br>
+    <!-- 2. MAIN CONTAINER (FLEX LAYOUT) -->
+    <div style="display: flex; gap: 20px;">
 
-    <!-- 3. MAIN CONTENT CONTAINER -->
-    <main>
+        <!-- SIDEBAR -->
+        <aside style="width: 220px; background-color: #f4f4f4; padding: 15px;">
+            <h3>Quick Stats</h3>
+            <ul>
+                <li>Active Clients: 3</li>
+                <li>Pending Tasks: 5</li>
+                <li>Completed: 12</li>
+            </ul>
+        </aside>
 
-        <!-- Welcome Banner Section -->
-        <h2>Welcome to TrackPilot</h2>
-        <p>
-            TrackPilot helps team members log new client details, update onboarding stages, and keep client setups organized in one place.
-        </p>
+        <!-- MAIN CONTENT -->
+        <main style="flex: 1;">
+            
+            <section id="welcome">
+                <h2>Welcome to TrackPilot Dashboard</h2>
+                <p>TrackPilot helps team members log new client details, update onboarding stages, and manage setups in one centralized place.</p>
+                <img src="https://dummyimage.com/600x180/6b21a8/ffffff.png&text=TrackPilot+Dashboard+Overview" alt="TrackPilot System Overview Banner" style="max-width: 100%; height: auto;">
+            </section>
 
-        <!-- Image Banner -->
-        <div>
-            <img 
-                src="https://dummyimage.com/600x180/6b21a8/ffffff.png&text=TrackPilot+|+Client+Dashboard" 
-                alt="TrackPilot Banner" 
-                width="100%" 
-                style="max-width: 600px;"
-            >
-        </div>
+            <hr>
 
-        <hr>
+            <!-- ADD CLIENT FORM -->
+            <section id="add-client">
+                <h2>Add New Client</h2>
+                <form action="#" method="POST">
+                    <div>
+                        <label for="company-name">Company Name:</label><br>
+                        <input type="text" id="company-name" name="companyName" placeholder="e.g. Acme Corp" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="contact-email">Contact Email:</label><br>
+                        <input type="email" id="contact-email" name="contactEmail" placeholder="john@acme.com" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="stage">Onboarding Stage:</label><br>
+                        <select id="stage" name="stage">
+                            <option value="contract-signed">Contract Signed</option>
+                            <option value="kickoff-call">Kickoff Call</option>
+                            <option value="access-granted">Access Granted</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <br>
+                    <button type="submit">Add Client</button>
+                </form>
+            </section>
 
-        <!-- 4. HTML FORM SECTION (Adding New Client) -->
-        <section id="add-client">
-            <h2>Add New Client</h2>
-            <p>Enter client details below to register them into the onboarding pipeline:</p>
+            <hr>
 
-            <form>
-                <label><b>Company Name:</b></label><br>
-                <input type="text" placeholder="e.g. Acme Corp" required style="width: 98%;"><br><br>
+            <!-- DASHBOARD TABLE -->
+            <section id="dashboard">
+                <h2>Active Onboarding Pipeline</h2>
+                <table border="1" cellpadding="8" style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Company Name</th>
+                            <th>Contact Email</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#101</td>
+                            <td><strong>Acme Corp</strong></td>
+                            <td><em>john@acme.com</em></td>
+                            <td>Contract Signed</td>
+                        </tr>
+                        <tr>
+                            <td>#102</td>
+                            <td><strong>TechNova</strong></td>
+                            <td><em>sarah@technova.io</em></td>
+                            <td>Kickoff Call</td>
+                        </tr>
+                        <tr>
+                            <td>#103</td>
+                            <td><strong>CloudScale</strong></td>
+                            <td><em>admin@cloudscale.net</em></td>
+                            <td>Access Granted</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-                <label><b>Contact Email:</b></label><br>
-                <input type="email" placeholder="john@acme.com" required style="width: 98%;"><br><br>
+        </main>
+    </div>
 
-                <label><b>Start Date:</b></label><br>
-                <input type="date"><br><br>
+    <hr>
 
-                <label><b>Onboarding Stage:</b></label><br>
-                <select>
-                    <option>Contract Signed</option>
-                    <option>Kickoff Call</option>
-                    <option>Access Granted</option>
-                    <option>Completed</option>
-                </select><br><br>
-
-                <button type="submit">
-                    Add Client to Dashboard
-                </button>
-            </form>
-        </section>
-
-        <hr>
-
-        <!-- 5. HTML TABLE SECTION (Client Dashboard) -->
-        <section id="dashboard">
-            <h2>Active Client Dashboard</h2>
-
-            <table>
-                <!-- Table Header -->
-                <tr>
-                    <th>ID</th>
-                    <th>Company Name</th>
-                    <th>Contact Email</th>
-                    <th>Start Date</th>
-                    <th>Status</th>
-                </tr>
-
-                <!-- Row 1 -->
-                <tr>
-                    <td>#101</td>
-                    <td><b>Acme Corp</b></td>
-                    <td><i>john@acme.com</i></td>
-                    <td>2026-08-01</td>
-                    <td><span class="status-badge">Contract Signed</span></td>
-                </tr>
-
-                <!-- Row 2 -->
-                <tr>
-                    <td>#102</td>
-                    <td><b>TechNova</b></td>
-                    <td><i>sarah@technova.io</i></td>
-                    <td>2026-08-05</td>
-                    <td><span class="status-badge">Kickoff Call</span></td>
-                </tr>
-
-                <!-- Row 3 -->
-                <tr>
-                    <td>#103</td>
-                    <td><b>CloudScale</b></td>
-                    <td><i>admin@cloudscale.net</i></td>
-                    <td>2026-08-10</td>
-                    <td><span class="status-badge">Access Granted</span></td>
-                </tr>
-            </table>
-        </section>
-
-        <hr>
-
-        <!-- 6. HTML LIST SECTION (Standard Operating Steps) -->
-        <section id="checklist">
-            <h2>Standard Onboarding Steps</h2>
-            <p>Follow these standard procedures for every new client registered:</p>
-
-            <ol>
-                <li>Verify contact details and create the client folder.</li>
-                <li>Schedule and record the <i>Kickoff Video Call</i>.</li>
-                <li>Issue system credentials and mark status as <b>Access Granted</b>.</li>
-                <li>Confirm client setup sign-off and update stage to <b>Completed</b>.</li>
-            </ol>
-        </section>
-
-    </main>
-
-    <!-- 7. FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer>
-        <p>TrackPilot Project &copy; 2026 | Built with HTML & CSS</p>
+        <p>TrackPilot Project &copy; 2026 | Built with HTML5</p>
     </footer>
 
 </body>
