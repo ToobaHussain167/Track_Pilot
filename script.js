@@ -1,6 +1,5 @@
-// ==========================================
 // 1. DATA STATE & LOCALSTORAGE PERSISTENCE
-// ==========================================
+
 const defaultClients = [
     { id: 101, name: "Acme Corp", email: "john@acme.com", stage: "contract-signed" },
     { id: 102, name: "TechNova", email: "sarah@technova.io", stage: "kickoff-call" },
@@ -21,9 +20,8 @@ function saveToStorage() {
     localStorage.setItem("trackpilot_clients", JSON.stringify(clients));
 }
 
-// ==========================================
-// 2. DOM MANIPULATION & RENDER FUNCTIONS (Day 3)
-// ==========================================
+// 2. DOM MANIPULATION & RENDER FUNCTIONS 
+
 function updateQuickStats() {
     const activeElem = document.getElementById("stat-active");
     const pendingElem = document.getElementById("stat-pending");
@@ -69,14 +67,8 @@ function deleteClient(index) {
     renderTable();
 }
 
-// ==========================================
 // 3. API HANDLING: GET & POST REQUESTS (Day 2)
-// ==========================================
 
-/**
- * GET Request: Fetches external lead data using async/await, 
- * response.ok verification, and try/catch error handling.
- */
 async function fetchExternalLeads() {
     const fetchBtn = document.getElementById("btn-fetch-leads");
     
@@ -144,9 +136,8 @@ async function syncClientToServer(clientData) {
     }
 }
 
-// ==========================================
 // 4. FORM HANDLING & VALIDATION (Day 3)
-// ==========================================
+
 const addClientForm = document.getElementById("add-client-form");
 if (addClientForm) {
     addClientForm.addEventListener("submit", function(e) {
@@ -182,9 +173,8 @@ if (addClientForm) {
     });
 }
 
-// ==========================================
 // 5. CONTACT FORM EVENT HANDLER
-// ==========================================
+
 const contactForm = document.getElementById("contact-form");
 const contactAlert = document.getElementById("contact-alert");
 
@@ -201,5 +191,4 @@ if (contactForm) {
     });
 }
 
-// Initial render execution on page load
 renderTable();
