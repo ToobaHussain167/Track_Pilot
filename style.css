@@ -1,104 +1,115 @@
-/* Page Layout */
+/* ==========================================================================
+   GLOBAL RESETS & CSS VARIABLES
+   ========================================================================== */
+:root {
+    --primary: #6b21a8;
+    --primary-hover: #581c87;
+    --accent: #c084fc;
+    --dark: #000000;
+    --light-bg: #f3e8ff;
+    --white: #ffffff;
+    --border: #e5e7eb;
+    --radius: 10px;
+}
+
 body {
-    background-color: #ffffff;
-    color: #000000;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
-    max-width: 900px;
-    margin: 0 auto;
+    flex: 1;
 }
 
-/* Header & Navigation */
+/* NAVBAR & HEADER */
+.navbar {
+    background-color: var(--dark) !important;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    color: var(--accent) !important;
+}
+
 header {
-    background-color: #6b21a8;
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+}
+
+/* METRICS GRID */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.metric-card {
+    background-color: var(--light-bg);
+    border-left: 5px solid var(--primary);
     padding: 20px;
-    text-align: center;
+    border-radius: var(--radius);
 }
 
-nav {
-    background-color: #000000;
-    padding: 12px;
-    text-align: center;
+.metric-card h4 {
+    color: var(--primary);
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
-nav a {
-    color: #c084fc;
-    margin: 0 15px;
-    text-decoration: none;
+.metric-card p {
+    font-size: 1.8rem;
     font-weight: bold;
+    color: var(--dark);
 }
 
-/* Headings & Dividers */
+/* SECTION CARDS & FORMS */
+.section-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
 h2, h3 {
-    color: #6b21a8;
+    color: var(--primary);
+    font-weight: 700;
 }
 
-hr {
-    border: 1px solid #6b21a8;
-    margin: 30px 0;
+button, .btn {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+    border: none !important;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
-/* Form Styling */
-form {
-    background-color: #f3e8ff;
-    border: 1px solid #6b21a8;
-    padding: 15px;
+button:hover, .btn:hover {
+    background-color: var(--primary-hover) !important;
 }
 
-input, select {
-    padding: 6px;
-    margin-top: 4px;
-}
-
-button {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
-
-th {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 10px;
-}
-
-td {
-    padding: 8px;
-    border: 1px solid #dddddd;
-}
-
-/* Reusable Status Badge Class */
+/* BADGES & FOOTER */
 .status-badge {
-    background-color: #f3e8ff;
-    color: #6b21a8;
-    padding: 3px 8px;
-    font-weight: bold;
-}
-
-/* List & Footer Styling */
-ol {
-    line-height: 1.8;
+    background-color: var(--light-bg);
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
 }
 
 footer {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--dark);
+    color: var(--white);
     text-align: center;
-    padding: 15px;
-    margin-top: 40px;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
 }

@@ -1,144 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TrackPilot - Internal Onboarding Tracker</title>
-    <!-- Linked External Stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackPilot - Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom Theme CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. HEADER & MAIN TITLE -->
-    <header>
-        <h1>TrackPilot</h1>
-        <p><i>Internal Client Onboarding & Progress Management Tool</i></p>
-    </header>
-
-    <!-- 2. NAVIGATION BAR -->
-    <nav>
-        <a href="#add-client">Add Client</a> | 
-        <a href="#dashboard">Dashboard Table</a> | 
-        <a href="#checklist">Onboarding Checklist</a> | 
-        <a href="https://github.com" target="_blank">GitHub Repo</a>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fs-4" href="index.html">TrackPilot</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-white fw-semibold active" href="index.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-semibold" href="about.html">About & Workflow</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-semibold" href="contact.html">Support & Contact</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-    <br>
-
-    <!-- 3. MAIN CONTENT CONTAINER -->
-    <main>
-
-        <!-- Welcome Banner Section -->
-        <h2>Welcome to TrackPilot</h2>
-        <p>
-            TrackPilot helps team members log new client details, update onboarding stages, and keep client setups organized in one place.
-        </p>
-
-        <!-- Image Banner -->
-        <div>
-            <img 
-                src="https://dummyimage.com/600x180/6b21a8/ffffff.png&text=TrackPilot+|+Client+Dashboard" 
-                alt="TrackPilot Banner" 
-                width="100%" 
-                style="max-width: 600px;"
-            >
+    <!-- HEADER HERO BANNER -->
+    <header class="text-center py-4 text-white">
+        <div class="container">
+            <h1 class="fw-bold">TrackPilot Dashboard</h1>
+            <p class="lead mb-0">Internal Client Onboarding & Progress Management Tool</p>
         </div>
+    </header>
 
-        <hr>
-
-        <!-- 4. HTML FORM SECTION (Adding New Client) -->
-        <section id="add-client">
-            <h2>Add New Client</h2>
-            <p>Enter client details below to register them into the onboarding pipeline:</p>
-
-            <form>
-                <label><b>Company Name:</b></label><br>
-                <input type="text" placeholder="e.g. Acme Corp" required style="width: 98%;"><br><br>
-
-                <label><b>Contact Email:</b></label><br>
-                <input type="email" placeholder="john@acme.com" required style="width: 98%;"><br><br>
-
-                <label><b>Start Date:</b></label><br>
-                <input type="date"><br><br>
-
-                <label><b>Onboarding Stage:</b></label><br>
-                <select>
-                    <option>Contract Signed</option>
-                    <option>Kickoff Call</option>
-                    <option>Access Granted</option>
-                    <option>Completed</option>
-                </select><br><br>
-
-                <button type="submit">
-                    Add Client to Dashboard
-                </button>
-            </form>
+    <!-- MAIN APP CONTAINER -->
+    <main class="container my-4">
+        
+        <!-- TOP METRICS GRID -->
+        <section class="metrics-grid mb-4">
+            <div class="metric-card shadow-sm">
+                <h4>Active Clients</h4>
+                <p id="stat-active" class="mb-0">0</p>
+            </div>
+            <div class="metric-card shadow-sm">
+                <h4>Pending Tasks</h4>
+                <p id="stat-pending" class="mb-0">0</p>
+            </div>
+            <div class="metric-card shadow-sm">
+                <h4>Completed Onboardings</h4>
+                <p id="stat-completed" class="mb-0">0</p>
+            </div>
         </section>
 
-        <hr>
+        <div class="row g-4">
+            <!-- SIDEBAR FORM -->
+            <aside class="col-lg-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="card-title h4 mb-3">Add New Client</h3>
+                        <form id="add-client-form">
+                            <div class="mb-3">
+                                <label for="company-name" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" id="company-name" placeholder="e.g. Acme Corp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label">Contact Email</label>
+                                <input type="email" class="form-control" id="contact-email" placeholder="john@acme.com" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="stage" class="form-label">Onboarding Stage</label>
+                                <select class="form-select" id="stage">
+                                    <option value="contract-signed">Contract Signed</option>
+                                    <option value="kickoff-call">Kickoff Call</option>
+                                    <option value="access-granted">Access Granted</option>
+                                    <option value="completed">Completed</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn w-100">Add Client</button>
+                        </form>
+                    </div>
+                </div>
+            </aside>
 
-        <!-- 5. HTML TABLE SECTION (Client Dashboard) -->
-        <section id="dashboard">
-            <h2>Active Client Dashboard</h2>
 
-            <table>
-                <!-- Table Header -->
-                <tr>
-                    <th>ID</th>
-                    <th>Company Name</th>
-                    <th>Contact Email</th>
-                    <th>Start Date</th>
-                    <th>Status</th>
-                </tr>
+            
+<section class="col-lg-8">
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-4">
+            
+            <!-- PASTE THE BUTTON HERE -->
+            <button id="btn-fetch-leads" class="btn btn-outline-primary mb-3" onclick="fetchExternalLeads()">
+                Fetch External Lead (API)
+            </button>
 
-                <!-- Row 1 -->
-                <tr>
-                    <td>#101</td>
-                    <td><b>Acme Corp</b></td>
-                    <td><i>john@acme.com</i></td>
-                    <td>2026-08-01</td>
-                    <td><span class="status-badge">Contract Signed</span></td>
-                </tr>
-
-                <!-- Row 2 -->
-                <tr>
-                    <td>#102</td>
-                    <td><b>TechNova</b></td>
-                    <td><i>sarah@technova.io</i></td>
-                    <td>2026-08-05</td>
-                    <td><span class="status-badge">Kickoff Call</span></td>
-                </tr>
-
-                <!-- Row 3 -->
-                <tr>
-                    <td>#103</td>
-                    <td><b>CloudScale</b></td>
-                    <td><i>admin@cloudscale.net</i></td>
-                    <td>2026-08-10</td>
-                    <td><span class="status-badge">Access Granted</span></td>
-                </tr>
-            </table>
-        </section>
-
-        <hr>
-
-        <!-- 6. HTML LIST SECTION (Standard Operating Steps) -->
-        <section id="checklist">
-            <h2>Standard Onboarding Steps</h2>
-            <p>Follow these standard procedures for every new client registered:</p>
-
-            <ol>
-                <li>Verify contact details and create the client folder.</li>
-                <li>Schedule and record the <i>Kickoff Video Call</i>.</li>
-                <li>Issue system credentials and mark status as <b>Access Granted</b>.</li>
-                <li>Confirm client setup sign-off and update stage to <b>Completed</b>.</li>
-            </ol>
-        </section>
-
+            <h2 class="h4 mb-3">Active Onboarding Pipeline</h2>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Company Name</th>
+                            <th>Contact Email</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dashboard-table-body">
+                        <!-- Dynamic Rows Rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+            <!-- MAIN PIPELINE TABLE -->
+            <section class="col-lg-8">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h2 class="h4 mb-3">Active Onboarding Pipeline</h2>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Company Name</th>
+                                        <th>Contact Email</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="dashboard-table-body">
+                                    <!-- Dynamic Rows Rendered by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <!-- 7. FOOTER SECTION -->
-    <footer>
-        <p>TrackPilot Project &copy; 2026 | Built with HTML & CSS</p>
+    <!-- FOOTER -->
+    <footer class="mt-5">
+        <div class="container">
+            <p class="mb-0">TrackPilot Project &copy; 2026 | Built with HTML5, Bootstrap & JavaScript</p>
+        </div>
     </footer>
 
-</body>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body> 
 </html>
