@@ -1,0 +1,11 @@
+body {
+  background-color: var(--body-bg);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2,
+h3 {
+  color: var(--primary);
+  font-weight: 700;
+}

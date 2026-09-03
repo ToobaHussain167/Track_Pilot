@@ -1,0 +1,19 @@
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+header {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-hover) 100%
+  );
+}
+
+@media (min-width: 48rem) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

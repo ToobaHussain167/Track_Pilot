@@ -1,7 +1,18 @@
+@import url('base/_reset.css');
+@import url('base/_variables.css');
+@import url('base/_typography.css');
+
+@import url('components/_navbar.css');
+@import url('components/_button.css');
+@import url('components/_card.css');
+
+@import url('pages/_dashboard.css');
+@import url('pages/_contact.css');
 /* ==========================================================================
    GLOBAL RESETS & CSS VARIABLES
-   ========================================================================== */
-:root {
+   ========================================================================== 
+
+   :root {
     --primary: #6b21a8;
     --primary-hover: #581c87;
     --accent: #c084fc;
@@ -10,7 +21,7 @@
     --white: #ffffff;
     --border: #e5e7eb;
     --radius: 10px;
-}
+} 
 
 body {
     background-color: #f8fafc;
@@ -23,16 +34,16 @@ body {
 
 main {
     flex: 1;
-}
+}                       */
 
-/* NAVBAR & HEADER */
+/* NAVBAR & HEADER 
 .navbar {
     background-color: var(--dark) !important;
 }
 
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
     color: var(--accent) !important;
-}
+}     */
 
 header {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);

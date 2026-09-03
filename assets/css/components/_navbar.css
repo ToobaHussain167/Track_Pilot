@@ -1,0 +1,27 @@
+.navbar {
+  background-color: var(--dark);
+}
+
+.navbar__brand {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar__brand:hover {
+  color: var(--white);
+}
+
+.navbar__links {
+  margin-left: auto;
+}
+
+.navbar__link {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  color: var(--accent);
+}

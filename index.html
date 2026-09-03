@@ -4,51 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrackPilot - Dashboard</title>
+
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
     <!-- Custom Theme CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand text-white fw-bold fs-4" href="index.html">TrackPilot</a>
-            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold active" href="index.html">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold" href="about.html">About & Workflow</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold" href="contact.html">Support & Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div data-navbar></div>
 
     <!-- HEADER HERO BANNER -->
     <header class="text-center py-4 text-white">
         <div class="container">
             <h1 class="fw-bold">TrackPilot Dashboard</h1>
-            <p class="lead mb-0">Internal Client Onboarding & Progress Management Tool</p>
+            <p class="lead mb-0">
+                Internal Client Onboarding &amp; Progress Management Tool
+            </p>
         </div>
     </header>
 
     <!-- MAIN APP CONTAINER -->
     <main class="container my-4">
-        
+
         <!-- TOP METRICS GRID -->
         <section class="metrics-grid mb-4">
             <div class="metric-card shadow-sm">
                 <h4>Active Clients</h4>
                 <p id="stat-active" class="mb-0">0</p>
             </div>
+
             <div class="metric-card shadow-sm">
                 <h4>Pending Tasks</h4>
                 <p id="stat-pending" class="mb-0">0</p>
             </div>
+
             <div class="metric-card shadow-sm">
                 <h4>Completed Onboardings</h4>
                 <p id="stat-completed" class="mb-0">0</p>
@@ -56,71 +51,96 @@
         </section>
 
         <div class="row g-4">
+
             <!-- SIDEBAR FORM -->
             <aside class="col-lg-4">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <h3 class="card-title h4 mb-3">Add New Client</h3>
+
                         <form id="add-client-form">
                             <div class="mb-3">
-                                <label for="company-name" class="form-label">Company Name</label>
-                                <input type="text" class="form-control" id="company-name" placeholder="e.g. Acme Corp" required>
+                                <label for="company-name" class="form-label">
+                                    Company Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="company-name"
+                                    placeholder="e.g. Acme Corp"
+                                    required
+                                >
                             </div>
+
                             <div class="mb-3">
-                                <label for="contact-email" class="form-label">Contact Email</label>
-                                <input type="email" class="form-control" id="contact-email" placeholder="john@acme.com" required>
+                                <label for="contact-email" class="form-label">
+                                    Contact Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="contact-email"
+                                    placeholder="john@acme.com"
+                                    required
+                                >
                             </div>
+
                             <div class="mb-3">
-                                <label for="stage" class="form-label">Onboarding Stage</label>
-                                <select class="form-select" id="stage">
-                                    <option value="contract-signed">Contract Signed</option>
-                                    <option value="kickoff-call">Kickoff Call</option>
-                                    <option value="access-granted">Access Granted</option>
-                                    <option value="completed">Completed</option>
+                                <label for="stage" class="form-label">
+                                    Onboarding Stage
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="stage"
+                                >
+                                    <option value="contract-signed">
+                                        Contract Signed
+                                    </option>
+
+                                    <option value="kickoff-call">
+                                        Kickoff Call
+                                    </option>
+
+                                    <option value="access-granted">
+                                        Access Granted
+                                    </option>
+
+                                    <option value="completed">
+                                        Completed
+                                    </option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn w-100">Add Client</button>
+
+                            <button
+                                type="submit"
+                                class="btn w-100"
+                            >
+                                Add Client
+                            </button>
                         </form>
                     </div>
                 </div>
             </aside>
 
-
-            
-<section class="col-lg-8">
-    <div class="card shadow-sm border-0">
-        <div class="card-body p-4">
-            
-            <!-- PASTE THE BUTTON HERE -->
-            <button id="btn-fetch-leads" class="btn btn-outline-primary mb-3" onclick="fetchExternalLeads()">
-                Fetch External Lead (API)
-            </button>
-
-            <h2 class="h4 mb-3">Active Onboarding Pipeline</h2>
-            <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>ID</th>
-                            <th>Company Name</th>
-                            <th>Contact Email</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="dashboard-table-body">
-                        <!-- Dynamic Rows Rendered by JS -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</section>
             <!-- MAIN PIPELINE TABLE -->
             <section class="col-lg-8">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
-                        <h2 class="h4 mb-3">Active Onboarding Pipeline</h2>
+
+                        <button
+                            id="btn-fetch-leads"
+                            class="btn btn-outline-primary mb-3"
+                        >
+                            Fetch External Lead (API)
+                        </button>
+
+                        <h2 class="h4 mb-3">
+                            Active Onboarding Pipeline
+                        </h2>
+
                         <div class="table-responsive">
                             <table class="table table-hover align-middle mb-0">
                                 <thead class="table-dark">
@@ -132,27 +152,34 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
+
                                 <tbody id="dashboard-table-body">
                                     <!-- Dynamic Rows Rendered by JS -->
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
                 </div>
             </section>
+
         </div>
     </main>
 
     <!-- FOOTER -->
     <footer class="mt-5">
         <div class="container">
-            <p class="mb-0">TrackPilot Project &copy; 2026 | Built with HTML5, Bootstrap & JavaScript</p>
+            <p class="mb-0">
+                TrackPilot Project &copy; 2026 | Built with HTML5, Bootstrap &amp; JavaScript
+            </p>
         </div>
     </footer>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <!-- Custom JavaScript -->
-    <script src="script.js"></script>
-</body> 
+    <script type="module" src="assets/js/main.js"></script>
+
+</body>
 </html>
