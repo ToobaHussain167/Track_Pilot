@@ -1,0 +1,63 @@
+
+
+:root {
+  /* Colour */
+  --color-bg: #ffffff;
+  --color-surface: #f8f6fc;
+  --color-border: #e4defa;
+  --color-text: #1a1625;
+  --color-text-muted: #6b6478;
+  --color-primary: #6d28d9;
+  --color-primary-dark: #4c1d95;
+  --color-primary-light: #ede9fe;
+  --color-danger: #dc2626;
+  --color-danger-light: #fee2e2;
+
+  /* Stage colours: one shade of purple per onboarding stage */
+  --stage-contract: #a855f7;
+  --stage-kickoff: #8b5cf6;
+  --stage-access: #7c3aed;
+  --stage-completed: #4c1d95;
+
+  /* Spacing, 4px scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  /* Type */
+  --font-heading: 'Sora', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+
+  /* Other */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow-1: 0 1px 3px rgba(26, 22, 37, 0.08);
+  --transition: 150ms ease;
+}
+
+/* --------------------------------------------------------------------
+   BOOTSTRAP INTEGRATION
+   Bootstrap 5 is loaded from a CDN in the <head> of every page, BEFORE
+   this stylesheet. That means Bootstrap's own CSS variables (things
+   like --bs-primary, --bs-body-font-family) are already set to
+   Bootstrap's defaults by the time our CSS runs — so we can override
+   just the ones we care about, right here, and every Bootstrap
+   component (buttons, navbar, grid, forms) picks up our brand colours
+   automatically without us having to fight Bootstrap's CSS everywhere.
+   -------------------------------------------------------------------- */
+:root {
+  --bs-primary: var(--color-primary);
+  --bs-primary-rgb: 109, 40, 217;
+  --bs-body-font-family: var(--font-body);
+  --bs-body-color: var(--color-text);
+  --bs-border-radius: var(--radius-sm);
+}

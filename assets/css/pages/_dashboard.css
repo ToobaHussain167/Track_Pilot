@@ -1,0 +1,77 @@
+
+
+.add-member {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.fetch-clients {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.fetch-clients p {
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+.board {
+  padding-bottom: var(--space-12);
+}
+
+.board__column {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  min-height: 120px;
+  height: 100%;
+}
+
+.board__column-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.board__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.board__column[data-stage="contract-signed"] .board__dot { background: var(--stage-contract); }
+.board__column[data-stage="kickoff-call"] .board__dot { background: var(--stage-kickoff); }
+.board__column[data-stage="access-granted"] .board__dot { background: var(--stage-access); }
+.board__column[data-stage="completed"] .board__dot { background: var(--stage-completed); }
+
+.board__column-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.board__count {
+  margin-left: auto;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.board__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.board__empty {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-4) 0;
+  margin: 0;
+}

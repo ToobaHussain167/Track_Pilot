@@ -1,0 +1,18 @@
+.form-field {
+  margin-bottom: var(--space-4);
+}
+
+.form-field__error {
+  color: var(--color-danger);
+  font-size: 0.8rem;
+  margin-top: var(--space-1);
+  display: none;
+}
+
+.form-field.has-error .form-control {
+  border-color: var(--color-danger);
+}
+
+.form-field.has-error .form-field__error {
+  display: block;
+}

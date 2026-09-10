@@ -1,0 +1,34 @@
+.site-nav {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-nav__brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  color: var(--color-text) !important;
+}
+
+.site-nav__brand span {
+  color: var(--color-primary);
+}
+
+.site-nav__link {
+  color: var(--color-text-muted) !important;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.site-nav__link:hover {
+  color: var(--color-primary) !important;
+}
+
+.site-nav__link[aria-current="page"] {
+  color: var(--color-primary) !important;
+  border-bottom-color: var(--color-primary);
+}
