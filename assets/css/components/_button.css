@@ -1,0 +1,7 @@
+
+
+.btn-outline-danger:hover {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
